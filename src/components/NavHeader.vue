@@ -38,7 +38,6 @@ onUnmounted(() => {
   <header class="header" :class="{ scrolled: isScrolled }">
     <div class="container header-inner">
       <router-link to="/" class="logo" @click="closeMobileMenu">
-        <span class="logo-icon">Q</span>
         <span class="logo-text">区融科技</span>
       </router-link>
 
@@ -114,19 +113,6 @@ onUnmounted(() => {
   gap: 10px;
   font-weight: 700;
   z-index: 1001;
-}
-
-.logo-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: var(--color-accent);
-  color: white;
-  font-size: 20px;
-  font-weight: 800;
 }
 
 .logo-text {

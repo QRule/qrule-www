@@ -1,13 +1,4 @@
 <script setup lang="ts">
-const milestones = [
-  { year: '2020', event: '公司成立，扎根成都' },
-  { year: '2021', event: '核心技术团队组建完成，首批客户签约' },
-  { year: '2022', event: '完成多个大型数字化转型项目' },
-  { year: '2023', event: '业务拓展至西南多省，团队规模突破50人' },
-  { year: '2024', event: '发布自主研发智能化平台产品' },
-  { year: '2025', event: '持续创新，服务客户突破100家' },
-]
-
 const values = [
   {
     title: '创新',
@@ -42,7 +33,7 @@ const values = [
         <div class="intro-text">
           <h2 class="section-title" style="text-align: left">公司简介</h2>
           <p>
-            四川区融科技有限公司（QRule）成立于2020年，总部位于四川省成都市。
+            四川区融科技有限公司（QRole）成立于2020年，总部位于四川省成都市。
             我们是一家专注于企业数字化转型与智能技术解决方案的科技公司。
           </p>
           <p>
@@ -52,13 +43,6 @@ const values = [
           <p>
             我们致力于用技术赋能企业，帮助客户在数字经济时代实现业务升级与价值增长。
           </p>
-        </div>
-        <div class="intro-visual">
-          <div class="visual-card">
-            <div class="visual-logo">Q</div>
-            <div class="visual-name">QRule</div>
-            <div class="visual-slogan">科技驱动 · 智领未来</div>
-          </div>
         </div>
       </div>
     </div>
@@ -78,26 +62,6 @@ const values = [
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">发展历程</h2>
-      <p class="section-subtitle">一路走来的每一步</p>
-      <div class="timeline">
-        <div
-          v-for="(milestone, index) in milestones"
-          :key="index"
-          class="timeline-item"
-          :class="{ reverse: index % 2 !== 0 }"
-        >
-          <div class="timeline-content">
-            <span class="timeline-year">{{ milestone.year }}</span>
-            <p class="timeline-event">{{ milestone.event }}</p>
-          </div>
-          <div class="timeline-dot"></div>
-        </div>
-      </div>
-    </div>
-  </section>
 </template>
 
 <style scoped>
@@ -120,10 +84,7 @@ const values = [
 }
 
 .about-intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  max-width: 800px;
 }
 
 .intro-text p {
@@ -131,42 +92,6 @@ const values = [
   line-height: 2;
   color: var(--color-text-light);
   margin-bottom: 16px;
-}
-
-.intro-visual {
-  display: flex;
-  justify-content: center;
-}
-
-.visual-card {
-  width: 300px;
-  height: 300px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.visual-logo {
-  font-size: 72px;
-  font-weight: 900;
-  color: var(--color-accent);
-}
-
-.visual-name {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--color-text-inverse);
-  letter-spacing: 4px;
-}
-
-.visual-slogan {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 2px;
 }
 
 /* Values */
@@ -209,75 +134,6 @@ const values = [
   line-height: 1.8;
 }
 
-/* Timeline */
-.timeline {
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: var(--color-border);
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline-content {
-  width: calc(50% - 30px);
-  text-align: right;
-  padding-right: 12px;
-}
-
-.timeline-item.reverse .timeline-content {
-  order: 2;
-  text-align: left;
-  padding-right: 0;
-  padding-left: 12px;
-  margin-left: auto;
-}
-
-.timeline-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background-color: var(--color-accent);
-  border: 3px solid var(--color-bg);
-  box-shadow: 0 0 0 2px var(--color-accent);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.timeline-year {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--color-accent);
-}
-
-.timeline-event {
-  font-size: 14px;
-  color: var(--color-text-light);
-  margin-top: 4px;
-}
-
 @media (max-width: 768px) {
   .page-hero {
     padding: 120px 0 60px;
@@ -287,38 +143,8 @@ const values = [
     font-size: 36px;
   }
 
-  .about-intro {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .timeline::before {
-    left: 20px;
-  }
-
-  .timeline-item {
-    flex-direction: row;
-  }
-
-  .timeline-content {
-    width: auto;
-    text-align: left;
-    padding-left: 48px;
-    padding-right: 0;
-  }
-
-  .timeline-item.reverse .timeline-content {
-    order: unset;
-    padding-left: 48px;
-    margin-left: 0;
-  }
-
-  .timeline-dot {
-    left: 20px;
   }
 }
 </style>

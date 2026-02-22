@@ -8,7 +8,6 @@ const currentYear = new Date().getFullYear()
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">
-            <span class="logo-icon">Q</span>
             <span class="logo-text">区融科技</span>
           </div>
           <p class="footer-desc">
@@ -40,7 +39,7 @@ const currentYear = new Date().getFullYear()
           <h4>联系方式</h4>
           <ul>
             <li>四川省成都市</li>
-            <li>contact@qrule.cn</li>
+            <li>contact@qrole.cn</li>
           </ul>
         </div>
       </div>
@@ -70,19 +69,6 @@ const currentYear = new Date().getFullYear()
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
-}
-
-.logo-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background-color: var(--color-accent);
-  color: white;
-  font-size: 18px;
-  font-weight: 800;
 }
 
 .logo-text {

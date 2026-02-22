@@ -26,13 +26,6 @@ const features = [
   },
 ]
 
-const stats = [
-  { number: '100+', label: '服务客户' },
-  { number: '200+', label: '成功项目' },
-  { number: '50+', label: '技术团队' },
-  { number: '99.9%', label: '客户满意度' },
-]
-
 onMounted(() => {
   isVisible.value = true
 })
@@ -65,17 +58,6 @@ onMounted(() => {
           <div class="feature-icon">{{ feature.icon }}</div>
           <h3 class="feature-title">{{ feature.title }}</h3>
           <p class="feature-desc">{{ feature.desc }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats-section">
-    <div class="container">
-      <div class="stats-grid">
-        <div v-for="(stat, index) in stats" :key="index" class="stat-item">
-          <div class="stat-number">{{ stat.number }}</div>
-          <div class="stat-label">{{ stat.label }}</div>
         </div>
       </div>
     </div>
@@ -200,31 +182,6 @@ onMounted(() => {
   line-height: 1.8;
 }
 
-/* Stats */
-.stats-section {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
-  padding: 80px 0;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 48px;
-  font-weight: 800;
-  color: var(--color-accent);
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.75);
-}
-
 /* CTA */
 .cta-section {
   background-color: var(--color-bg-alt);
@@ -251,11 +208,6 @@ onMounted(() => {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 48px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -269,15 +221,6 @@ onMounted(() => {
 
   .features-grid {
     grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
-  }
-
-  .stat-number {
-    font-size: 36px;
   }
 
   .cta-title {
